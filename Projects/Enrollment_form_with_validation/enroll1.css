@@ -1,0 +1,85 @@
+body {
+ background-repeat: no-repeat;
+background-size: cover;
+  background-image: url('./Images/enroll.jpg');
+}
+
+
+.logo{
+ margin-top:25%;
+width: 50%;
+ height: 50%; 
+float: left;
+  padding: 10px;
+  font-size: 20px;
+
+}
+
+#myButton1{
+
+margin-left: 30%;
+}
+#display{
+
+margin-left: 30%;
+}
+#firstnamecolor:hover{
+background-color:#a22b06; 
+	}	
+
+.button {
+  background-color:#a22b06; 
+  border: none;
+  color: white;
+  padding: 15px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+}
+.button2 {
+  background-color:#b6bf00; 
+  color: black;
+  border: none;
+
+margin-left: 30%;
+  padding: 15px 25px;
+  text-align: center;
+  font-size: 14px;
+}
+.button2:hover {
+  background-color:#b6bf00;
+  color: white;
+}
+.button3 {
+  background-color:#b6bf00; 
+  color: black;
+  border: none;
+margin-left: -250%;
+  padding: 15px 25px;
+  text-align: center;
+   font-size: 14px;
+}
+.button3:hover {
+  background-color:#b6bf00;
+  color: white;
+}
+.detail {
+
+  height: 100%;
+  width: 40%;
+  padding: 10px;
+  font-size: 20px;
+  background-color: #006751;
+  margin-left: 60%;
+
+}
+#TeamSelection
+{
+
+    height:30px;
+    font-size:10pt;
+}
+
+
+

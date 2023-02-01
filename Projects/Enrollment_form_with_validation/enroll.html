@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Enrollment Form</title>
+    <link href="enroll1.css" rel="stylesheet"/>
+
+			<script type="text/javascript" language="javascript" >
+			var hash = 0;
+			function change()
+{
+    document.getElementById("myButton1").value="Enroll Now";
+	document.getElementById("myButton1").style.backgroundColor='#b6bf00';
+}
+			
+function emailhash() {
+
+string=document.getElementById('email').value;
+console.log(string);
+var hash = 0;
+             
+            if (string.length == 0) return hash;
+             
+            for (i = 0; i < string.length; i++) {
+                char = string.charCodeAt(i);
+                hash = ((hash << 5) - hash) + char;
+                hash = hash & hash;
+            }
+             console.log(hash);
+            //return hash;
+			savedata(hash)
+			
+
+
+
+}
+
+	
+
+function savedata(savestr)
+{ 
+//storage = document.getElementById('email').value;
+
+localStorage.setItem('Email',savestr);
+sessionStorage.setItem("Email",savestr);
+document.cookie = "Email="+savestr;
+
+
+}
+function deletedata(){  
+document.getElementById("formenroll").reset();
+localStorage.removeItem("Email"); 
+sessionStorage.removeItem("Email") ;
+var now = new Date();    
+now.setMonth(now.getMonth() - 1);  
+document.cookie = "Email=;expiry=" + now.toUTCString() + ";";
+
+   
+ }   
+			function validateemail()  
+{  
+var x=document.formenroll.email.value;  
+var atposition=x.indexOf("@");  
+var dotposition=x.lastIndexOf(".");  
+if (atposition<1 || dotposition<atposition+2 || dotposition+2>=x.length){  
+  alert("Please enter a valid e-mail address ");  
+  
+  }  
+  return;
+}  
+			</script>
+
+
+
+
+
+  </head>
+  <body> 
+            
+ <div   class="logo">
+<p id="display"  style="color:white;">SIMPLE CSS TEMPLATE  </p>
+<h3  id="display"  style="color:white;">WELCOME TO OUR TEAM</h3>
+<input onclick="change()" class="button" type="button" value="JOIN WITH US" id="myButton1"></input>
+
+</div>
+    <div class="detail">
+      <main>
+        <h1 style="color:white;">Learn More Today</h1> 
+        <p style="color:white;">Complete the form below for detailed team information and to be contacted by phone and email.</p>
+        <section>
+                            
+
+                        <table border="0" cellspacing="0" cellpadding="0" id="Enrollment">
+                            <tr>
+                                <td style="color:white;"><p></p>
+                                    SELECT A TEAM*
+                                </td></tr><tr>
+                               <td style="color:white;">
+
+                                                    <select id="TeamSelection" style="width:415px"
+    required                 ><option value="" disabled selected>Select a Team</option>                                   
+<option value="0">DEVELOPMENT</option>
+                                                        <option value="1">TESTING</option>
+                                                        <option value="2">DEBUG </option>
+                                                        <option value="3" >LIVE</option>
+                                                    </select>
+                                                </td>
+                            </tr></table> <table border="0" cellspacing="0" cellpadding="5" id="Enrollment">
+
+         <tr> <br>
+                                <td id="firstnamecolor" style="color:white;">
+                                    FIRST NAME
+                                </td>  <td style="color:white;">
+                                   LAST NAME
+                                </td></tr><tr><td> <input maxlength="50" style="width:200px;height:30px;"
+    placeholder="First Name" id="firstname" onkeypress="return/[A-Z.@]/i.test(event.key)" required/></td><td> <input maxlength="50" style="width:200px;height:30px;"
+  onkeypress="return/[A-Z.@]/i.test(event.key)"   placeholder="Last Name" id="lastname" required/></td></tr>
+
+
+<tr>
+                                <td style="color:white;"> 
+                                    EMAIL
+                                </td>  <td style="color:white;">
+                                    PHONE NUMBER
+                                </td></tr><tr><td> <input type="text"  name="email"  maxlength="50" style="width:200px;height:30px;"
+  placeholder="EMAIL" id="email"  required /></td><td> <input type="text"  maxlength="50" style="width:200px;height:30px;"
+     placeholder="PHONE NUMBER" id="phnumber" onclick="validateemail()" onkeypress="return/[0-9.@]/i.test(event.key)" required /></td></tr></table><table border="0" cellspacing="0" cellpadding="0" id="Enrollment">
+                     <tr>           </td> <td style="color:white;">  <br><input name="checkBox" id="accept" style="color:white;" type="checkbox" />Yes, I would like to receive communications by call / email about Brainlabs services.</td>
+</tr><tr><td> <br> <br><button type="submit" onclick="validateemail();emailhash(); " class="button2">Submit</button></td><td> <br> <br><input type = "button" value = "Reset"  class="button3" onClick = "deletedata()"/></td></tr></table>
+        </section>
+      </main>
+    </div>
+
+
+  </body>
+
+</html>
