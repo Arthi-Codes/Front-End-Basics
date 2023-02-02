@@ -1,0 +1,34 @@
+ .dot{
+height:500px;
+width:500px;
+margin-top:9%;
+background-color:blue;
+display: inline-block;
+border-radius:0 500px 0 0;
+} 
+ .dot1{
+height:200px;
+width: 200px;
+background-color:yellow;
+margin-left:-250px;
+margin-bottom:250px;
+display: inline-block;
+border-radius:200px;
+} 
+.dot2{
+height:150px;
+width:300px;
+margin-bottom:30%;
+background-color:blue;
+display: inline-block;
+border-radius:0 0 200px 200px;
+}
+.dot3{
+height:400px;
+width: 400px;
+background-color:red;
+margin-left:-350px;
+margin-bottom:100px;
+display: inline-block;
+border-radius:200px;
+}
